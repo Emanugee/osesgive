@@ -91,7 +91,7 @@ def payment(request):
     if request.method == 'POST':
         api_key = 'sk_test_ad502719e58fd78a40fd31ab9415532181331240'
         curl = 'https://api.paystack.co/transaction/initialize'
-        cburl = 'http://54.234.133.104/thanks' 
+        cburl = 'http://34.205.129.252/thanks' 
         ref = str(uuid.uuid4()) 
         profile = Profile.objects.get(user__username = request.user.username)
         amount = float(request.POST['amount']) * 100  
