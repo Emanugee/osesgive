@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block header %}{% include 'header.html' %}{% endblock header %}
+{% block content %}
+<div class="container-fluid airt">
+    <div class="container">
+      <h6 class="text-white"><a href="{% url 'home' %}" class="text-warning">Home</a> / Confirm</h6> 
+    </div>
+</div>
+<div class="container pay mt-5">
+  <form action="{% url 'payment' %}" class="pt-2" method="POST"> 
+    {% csrf_token %}
+   <div class="form-outline mb-2">
+    <label class="form-label" for="form7Example1">Enter an Amount</label>
+    <div class="input-group mb-3">
+      <span class="input-group-text">$</span>
+      <input type="text" name="amount" value="{{info.amount}}" class="form-control" aria-label="Amount (to the nearest dollar)" readonly/>
+      <span class="input-group-text">.00</span>
+    </div>
+   </div>
+    <div class="form-outline mb-3">
+      <input type="text" name="purpose" value="{{info.purpose}}" id="form7Example1" class="form-control" readonly/>
+    </div>
+    <!-- Name input -->
+    <div class="form-outline mb-2">
+      <input type="text" name="first_name" value="{{info.first_name}}" id="form7Example1" class="form-control" readonly/>
+      <label class="form-label" for="form7Example1">First Name</label>
+    </div>
+    <div class="form-outline mb-2">
+      <input type="text" name="last_name" value="{{info.last_name}}" id="form7Example1" class="form-control" readonly/>
+      <label class="form-label" for="form7Example1">Last Name</label>
+    </div>
+    <div class="form-outline">
+      <input type="tel" name="phone" value="{{info.phone}}" id="typePhone" class="form-control" readonly/>
+      <label class="form-label" for="typePhone">Phone Number</label>
+    </div>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="email" name="email" value="{{info.email}}" id="form7Example2" class="form-control" readonly/>
+      <label class="form-label" for="form7Example2">Email address</label>
+    </div>
+    <div class="log">
+      <button type="submit" class="btn btn-success btn-block mb-4">Confirm Payment</button>
+  </div>
+  </form>
+</div>
+{% endblock content %}
+{% block footer %}{% include 'footer.html' %}{% endblock footer %}
+

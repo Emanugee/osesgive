@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block header %}{% include 'header.html' %}{% endblock header %}
+{% block content %}
+<div class="container-fluid airt">
+    <div class="container">
+      <h6 class="text-white"><a href="{% url 'home' %}" class="text-warning">Home</a> / Thanks</h6> 
+    </div>
+  </div>
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="text-danger mt-5">Transaction Receipt</h1>
+        <h5 class="mb-4 pt-4">Payee: <span>{{transact.user}}</span></h5>
+        <h5 class="mb-4">Amount: <span>${{transact.amount}}</span></h5>
+        <h5 class="mb-4">Ref Code: <span class="text-primary">{{transact.pay_code}}</span></h5>
+        <h5 class="mb-4">Payment Status: <span>{{transact.paid}}</span></h5>
+        <h5 class="mb-4">Date: <span>{{transact.payment_date}}</span></h5>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+{% block footer %}{% include 'footer.html' %}{% endblock footer %}
+

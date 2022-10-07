@@ -1,0 +1,165 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.navbar-nav a{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: small;
+}
+
+/* banner*/
+.banner{
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0, 0, 0, 0.87)), url(../img/clubkonnect_image-50.jpg);
+    height: 680px;
+}
+.banner h3{
+    padding-top: 10%;
+    text-transform: capitalize;
+    font-size: 50px;
+}
+.banner button{
+    color: black;
+    font-weight: 600;
+}
+/* banner done*/
+
+/* footer */
+.foot{
+    font-weight: 500;
+    padding: 1%;
+    padding-top: 0%;
+    font-size: small;
+    /* margin-top: 20% !important; */
+}
+.foot p{
+    padding-top: 10px;
+    /* padding-bottom: 5px; */
+}
+/* footer done */
+
+/* airtime */
+.airt{
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0, 0, 0, 0.87)), url(../img/clubkonnect_image-50.jpg);
+    height: 100px;
+}
+.airt h6{
+    padding-top: 5%;
+    font-size: small;
+    text-transform: uppercase;
+}
+.airt h6 a{
+    text-decoration: none;
+}
+.airtfo form{
+    margin-top: 5%;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: 1px solid black;
+    padding: 15px;
+}
+.airtfo form label{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: small;
+}
+.airtfo form p{
+    font-size: smaller;
+}
+.airtfo form button{
+    font-weight: bold;
+    font-size: small;
+}
+/* airtime done */
+
+/* login  */
+.login{
+    width: 30%;
+    margin-top: 7%;
+    padding-bottom: 2%;
+}
+.nav-item .active{
+    background: gold !important;
+    color: black !important;
+    font-weight: 500 !important;
+}
+.login #tab-register{
+    color: gold;
+    font-weight: 500;
+}
+.login #tab-login{
+    color: gold;
+    font-weight: 500;
+}
+.form-check #loginCheck{
+    background-color: gold;
+    border: none;
+    color: black;
+}
+.reg a{
+    color: gold;
+    text-decoration: none;
+}
+.reg a:hover{
+    color: gold;
+    font-weight: 500;
+}
+.log .btn{
+    width: 100%;
+}
+/* login done */
+
+/* pay form */
+.pay{
+    width: 40%;
+    margin-bottom: 10%;
+}
+.pay label{
+    color: white;
+}
+.pay form{
+    outline: 2px solid gold;
+    padding: 2%;
+    margin-bottom: 30%;
+}
+.form-select option:hover{
+    background-color: gold !important;
+}
+/* pay form done */
+
+@media (min-width: 320px) and (max-width: 768px){
+    .banner{
+        background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0, 0, 0, 0.87)), url(../img/clubkonnect_image-50.jpg);
+        height: 600px;
+    }
+    .banner h3{
+        padding-top: 50%;
+        text-transform: capitalize;
+        font-size: 30px;
+    }
+    .banner button{
+        color: black;
+        font-weight: 600;
+    }
+    .foot p{
+        padding-top: 10px;
+        /* padding-bottom: 5px; */
+    }
+    .airt h6{
+        padding-top: 25%;
+        font-size: small;
+        text-transform: uppercase;
+    }
+    .login{
+        width: 100%;
+        margin-top: 12%;
+        padding-bottom: 2%;
+    }
+    .pay{
+        width: 100%;
+        margin-bottom: 10%;
+    }
+}

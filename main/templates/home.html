@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block header %}{% include 'header.html' %}{% endblock header %}
+{% block content %}
+<div class="container-fluid banner">
+  <div class="container pay">
+    <h1 class="text-warning text-center pt-3 pb-3">Make a Payment Now</h1>
+    <form action="{% url 'home' %}" class="pt-2" method="POST">  
+      {% csrf_token %}
+     <div class="form-outline mb-2">
+      <label class="form-label" for="form7Example1">Enter an Amount</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="text" name="amount" class="form-control" aria-label="Amount (to the nearest dollar)"/>
+        <span class="input-group-text">.00</span>
+      </div>
+     </div>
+      <div class="form-outline mb-3">
+        <select class="form-select" name="purpose" aria-label="Default select example">
+          
+          {% if option %}
+            {% for item in option %}
+              <option value="{{item.option|title}}">{{item.option|title}}</option>
+            {% endfor %}
+          {% endif %}
+            
+        </select>
+      </div>
+      <!-- Name input -->
+      <div class="form-outline mb-2">
+        <input type="text" name="first_name" value="{{profile.first_name}}" id="form7Example1" class="form-control" />
+        <label class="form-label" for="form7Example1">First Name</label>
+      </div>
+      <div class="form-outline mb-2">
+        <input type="text" name="last_name" value="{{profile.last_name}}" id="form7Example1" class="form-control" />
+        <label class="form-label" for="form7Example1">Last Name</label>
+      </div>
+      <div class="form-outline">
+        <input type="tel" name="phone" id="typePhone" class="form-control" />
+        <label class="form-label" for="typePhone">Phone Number</label>
+      </div>
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <input type="email" name="email" value="{{profile.email}}" id="form7Example2" class="form-control" />
+        <label class="form-label" for="form7Example2">Email address</label>
+      </div>
+      <div class="log">
+        <button type="submit" class="btn btn-warning btn-block mb-4">Pay Now</button>
+    </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}
+{% block footer %}{% include 'footer.html' %}{% endblock footer %}
